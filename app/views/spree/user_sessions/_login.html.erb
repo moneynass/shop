@@ -3,14 +3,12 @@
 <% end %>
 
 <% @body_id = 'login' %>
-<div id="existing-customer" class="panel panel-default">
-  <div class="panel-heading">
-    <div class="alert alert-info"><%= I18n.t('spree.login_as_existing') %></div>
-      <div data-hook="login" class="panel-body">
-        <%= render partial: 'spree/shared/login' %>
-        <hr>
-        <%= link_to I18n.t('spree.create_a_new_account'), spree.signup_path %> | <%= link_to I18n.t('spree.forgot_password'), spree.recover_password_path %>
-      </div>
-    </div>
+<div id="existing-customer">
+  <div class="alert alert-info"><%= I18n.t('spree.login_as_existing') %></div>
+  <div data-hook="login">
+    <%= render partial: 'spree/shared/login' %>
+    <hr>
+    <%= link_to I18n.t('spree.create_a_new_account'), spree.signup_path %> | <%= link_to I18n.t('spree.forgot_password'), spree.recover_password_path %>
   </div>
+</div>
 <div data-hook="login_extras"></div>
