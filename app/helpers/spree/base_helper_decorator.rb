@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spree::BaseHelper
   def layout_partial
     if devise_controller?
@@ -8,11 +10,11 @@ module Spree::BaseHelper
   end
 
   def flash_messages(opts = {})
-    ignore_types = ["order_completed"].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
+    ignore_types = ['order_completed'].concat(Array(opts[:ignore_types]).map(&:to_s) || [])
 
-     flash.each do |msg_type, text|
+    flash.each do |msg_type, text|
       unless ignore_types.include?(msg_type)
-        concat(content_tag :div, text, class: "flash alert alert-#{msg_type}")
+        concat(content_tag(:div, text, class: "flash alert alert-#{msg_type}"))
       end
     end
     nil
@@ -23,21 +25,21 @@ module Spree::BaseHelper
   end
 
   def nav_tree(root_taxon, current_taxon, max_level = 1)
-      return '' if max_level < 1 || root_taxon.children.empty?
-      content_tag :ul, class: 'dropdown-menu' do
-        taxons = root_taxon.children.map do |taxon|
-          css_class = (current_taxon && current_taxon.self_and_ancestors.include?(taxon)) ? 'active' : nil
-          content_tag :li, class: css_class do
-           link_to(taxon.name, seo_url(taxon)) +
-             taxons_tree(taxon, current_taxon, max_level - 1)
-          end
+    return '' if max_level < 1 || root_taxon.children.empty?
+
+    content_tag :ul, class: 'dropdown-menu' do
+      taxons = root_taxon.children.map do |taxon|
+        css_class = current_taxon&.self_and_ancestors&.include?(taxon) ? 'active' : nil
+        content_tag :li, class: css_class do
+          link_to(taxon.name, seo_url(taxon)) +
+            taxons_tree(taxon, current_taxon, max_level - 1)
         end
-        safe_join(taxons, "\n")
       end
+      safe_join(taxons, "\n")
+    end
   end
 
   def gallery
     @gallery ||= Spree::Config.variant_gallery_class.new(self)
   end
-
 end
