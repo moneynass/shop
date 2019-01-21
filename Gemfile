@@ -11,6 +11,7 @@ gem 'solidus_auth_devise'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'solidus_cloudinary'
+gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
 
 #Internationalization project for Solidus
 gem 'solidus_i18n'
