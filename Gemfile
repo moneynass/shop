@@ -8,6 +8,9 @@ ruby '2.5.1'
 gem 'bootstrap-sass'
 gem 'solidus'
 gem 'solidus_auth_devise'
+gem 'cloudinary'
+gem 'carrierwave'
+gem 'solidus_cloudinary'
 
 #Internationalization project for Solidus
 gem 'solidus_i18n'
