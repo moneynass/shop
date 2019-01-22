@@ -1,0 +1,138 @@
+/* Main navbar */
+.navbar-wagon {
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+  // background: white;
+  // background-color: rgba(47, 23, 15, 0.8);
+  background-color: white;
+  // font-family: 'Raleway ExtraLight';
+  // font-family: "Gill Sans", sans-serif;
+  // font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  height: 50px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  position: fixed; /* Set the navbar to fixed position */
+}
+
+/* Logo */
+.navbar-wagon-brand img {
+  height: 50px;
+}
+
+/* User Avatar */
+.navbar-wagon .avatar {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+/* Right section */
+.navbar-wagon-right {
+  display: flex;
+  align-items: center;
+  // justify-content: space-between;
+}
+
+/* Basic navbar item */
+.navbar-wagon-item {
+  color: black;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+/* Navbar link */
+.navbar-wagon-link {
+  color: black;
+  // color: #616668;
+  font-size: 11px;
+  weight: 200px;
+  line-height: 17px;
+  font-style: normal;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.navbar-wagon-link:hover {
+  color: black;
+  // color: #da552f;
+  text-decoration: none;
+  -webkit-transform: scale(1.15);
+}
+
+/* Dropdown menu */
+.navbar-wagon-dropdown-menu {
+  margin-top: 15px;
+  box-shadow: 1px 1px 4px #E6E6E6;
+  border-color: #E6E6E6;
+}
+.navbar-wagon-dropdown-menu li > a {
+  transition: color 0.3s ease;
+  font-weight: lighter !important;
+  color: #999999 !important;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  padding: 10px 20px;
+}
+.navbar-wagon-dropdown-menu li > a:hover {
+  background: transparent !important;
+  color: black !important;
+}
+.navbar-wagon-dropdown-menu:before {
+  content: ' ';
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  background-color: white;
+  transform: rotate(45deg);
+  border-left: 1px solid #E6E6E6;
+  border-top: 1px solid #E6E6E6;
+}
+
+
+
+/* =============================================================
+MENU SECTION STYLES
+============================================================ */
+.navbar-inverse {
+background-color: #469AE0;
+// background-image: url("http://res.cloudinary.com/dszqyk3yi/image/upload/v1521472353/briques.jpg");
+border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+background-color: transparent;
+border-bottom: 1px solid rgb(40, 141, 203);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+font-size: 12px;
+font-weight: 800;
+padding: 5px 0px;
+letter-spacing: 2px;
+margin: 10px 20px 10px 20px;
+color: #FFF;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover {
+color: #fff;
+font-weight: 900;
+font-family: 'Oswald', sans-serif;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+border-color: transparent;
+}
+.navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+background-color: rgb(40, 141, 203);
+}
+.navbar-inverse .navbar-toggle {
+border-color: rgb(40, 141, 203);
+}
+
