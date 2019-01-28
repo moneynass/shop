@@ -13,6 +13,9 @@ gem 'carrierwave'
 gem 'solidus_cloudinary'
 gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
 
+#Payment for Solidus
+gem "solidus_stripe", github: "solidusio-contrib/solidus_stripe"
+
 #Internationalization project for Solidus
 gem 'solidus_i18n'
 gem 'rails-i18n'
@@ -55,6 +58,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
