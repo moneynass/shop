@@ -1,0 +1,96 @@
+<body>
+  <div class="container-fluid cta">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12  shadow p-3 mb-5 bg-white rounded">
+        <div class="cta-inner text-center rounded">
+                <h3 class="section-heading mb-4">
+                  <span class="section-heading-upper">Optique de la marne</span>
+                  <img class="picture" <%= cl_image_tag("Samia.webp") %>
+                  <span class="section-heading-lower">Votre opticien visagiste</span>
+                </h3>
+                <p class="mb-0">Opticienne depuis plus de 20 ans, nous mettons tout notre savoir faire à votre service.
+                Nos valeurs reposent sur la confiance la disponibilité et le conseils d’un opticien indépendant.</p>
+        </div>
+      </div>
+            <div class="col-xs-12 col-sm-4 text-center shadow p-3 mb-5 bg-white rounded">
+              <!-- <div class="box-contact text-center rounded"> -->
+                <h3>Venez à la boutique</h3>
+                  <p>Nous sommes ouvert</p>
+                  <br>
+                  <br>
+                <ul class="list-unstyled list-hours mx-auto text-justify">
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Dimanche
+                    <span class="ml-auto">Fermé</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Lundi
+                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Mardi
+                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Mercredi
+                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Jeudi
+                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Vendredi
+                    <span class="ml-auto">7:00 AM to 8:00 PM</span>
+                  </li>
+                  <li class="list-unstyled-item list-hours-item d-flex">
+                    Samedi
+                    <span class="ml-auto">9:00 AM to 5:00 PM</span>
+                  </li>
+                </ul>
+                <br>
+                <br>
+                <p class="address list-unstyled-item">
+                  <!-- <em> -->
+                    <h3>OPTIQUE DE LA MARNE</h3>
+                    14 RUE DU CHEMIN DE FER
+                    77400 LAGNY SUR MARNE
+                  <!-- </em> -->
+                </p>
+                <p class="mb-0">
+                  <small>
+                    <em>Telephone</em>
+                  </small>
+                  <br>
+                  01 60 06 10 32
+                </p>
+              <!-- </div> -->
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center shadow p-3 mb-5 bg-white rounded">
+              <br>
+              <!-- <div class="box-contact text-center rounded"> -->
+                <div id="map" style=" height: 450px;" data-markers="<%= @markers.to_json %>">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center shadow p-3 mb-5 bg-white rounded">
+              <!-- <div class="box-contact text-center rounded"> -->
+
+                <%= render partial: 'spree/static_content/messages/new' %>
+              <!-- </div> -->
+            </div>
+    </div>
+  </div>
+    <!-- </section> -->
+    <!-- <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+ -->
+    <!-- Bootstrap core JavaScript
+    <! Script to highlight the active date in the hours list -->
+<script>
+      $('.list-hours li').eq(new Date().getDay()).addClass('today');
+</script>
+</body>
+

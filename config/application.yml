@@ -1,1 +1,5 @@
 CLOUDINARY_URL: "cloudinary://886351167219136:PdSjS7tpLE_OXCiTi5107fHF9S8@dszqyk3yi"
+
+mailgun_secret_api_key: "c01741b7855798d0a51f5810dfd3ffed-f45b080f-6d6111b7"
+email: "mezouar.nass@gmail.com"
+mailgun_domain: "sandbox1744a146b819409a801fbeba12935d4f.mailgun.org"

@@ -31,9 +31,11 @@
             <%= link_to '#', data: { toggle: "dropdown"}, "aria-haspopup" => "true" do %>
               <%= taxonomy.name %><span class="caret"></span>
             <% end %>
-            <%= nav_tree(taxonomy.root, @taxon, 1) %>
+            <%= nav_tree(taxonomy.root, @taxon, 2) %>
           </li>
         <% end %>
+        <li><%= link_to 'Services', "/services" %></li>
+        <li><%= link_to 'Contact', "/contact" %></li>
       </ul>
       <!-- <form class="navbar-form navbar-left">
         <div class="form-group">

@@ -1,0 +1,28 @@
+<head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link href="https://unpkg.com/ionicons@4.4.8/dist/css/ionicons.min.css" rel="stylesheet">
+</head>
+
+<div class="container">
+
+    <div class="col-xs-12 col-sm-12 text-center">
+      <br>
+      <label>Nous contacter</label>
+      <br>
+        <%= simple_form_for (@message), url: create_message_url,:method => :post do |f| %>
+        <%= notice %>
+        <%= @message.errors.full_messages.join(', ') %>
+        <%= f.text_field :name, placeholder: 'Nom *' %>
+        <%= f.text_field :email, placeholder: 'E-mail *' %>
+        <%= f.text_area :body, placeholder: 'Message *' %>
+        <br>
+        <br><%= f.submit 'Envoyer', class: "btn btn-block btn-primary top-spaced" %></br>
+        <% end %>
+        <a href="https://fr-fr.facebook.com/Opticienseineetmarne/" class="icon ion-logo-facebook"></a>
+        <i class="icon ion-logo-twitter"></i>
+        <i class="icon ion-logo-instagram"></i>
+    </div>
+</div>
+
+

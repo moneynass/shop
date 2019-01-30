@@ -16,6 +16,13 @@ gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
 #Payment for Solidus
 gem "solidus_stripe", github: "solidusio-contrib/solidus_stripe"
 
+#Ionicons
+gem 'ionicons-rails'
+
+#Mailgun
+gem 'mailgunner', '~> 2.4'
+gem 'mailgun-ruby'
+
 #Internationalization project for Solidus
 gem 'solidus_i18n'
 gem 'rails-i18n'

@@ -4,7 +4,7 @@
       <% @product_properties.each do |product_property| %>
         <% css_class = cycle('even', 'odd', name: "properties") %>
         <li class="<%= css_class %> list-group-item">
-          <span class='badge'><%= product_property.value %></span>
+          <span class='badge badge-danger'><%= product_property.value %></span>
           <%= product_property.property.presentation %>
         </li>
       <% end %>
