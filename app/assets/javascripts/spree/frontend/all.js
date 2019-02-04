@@ -7,3 +7,4 @@
 //= require spree/frontend/cart
 //= require spree/frontend/locale_selector
 //= require spree/frontend/checkout/address
+//= require spree/frontend/checkout/payment
