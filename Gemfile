@@ -12,12 +12,17 @@ gem 'cloudinary'
 gem 'carrierwave'
 gem 'solidus_cloudinary'
 gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
+gem 'solidus_geocoding'
+gem 'geocoder'
 
 #Payment for Solidus
 gem "solidus_stripe", github: "solidusio-contrib/solidus_stripe"
 
 #Ionicons
 gem 'ionicons-rails'
+
+#solidus frontend
+gem 'solidus_frontend'
 
 #Mailgun
 gem 'mailgunner', '~> 2.4'

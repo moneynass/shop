@@ -1,5 +1,7 @@
 {
   "name": "shop",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gmaps": "^0.4.24"
+  }
 }
