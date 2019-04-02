@@ -145,6 +145,8 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.9.25)
+    figaro (1.1.1)
+      thor (~> 0.14)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
     friendly_id (5.2.5)
@@ -452,6 +454,7 @@ DEPENDENCIES
   chromedriver-helper
   cloudinary
   coffee-rails (~> 4.2)
+  figaro
   geocoder
   ionicons-rails
   jbuilder (~> 2.5)
