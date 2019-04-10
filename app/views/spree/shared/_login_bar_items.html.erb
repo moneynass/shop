@@ -1,1 +1,17 @@
 <%# solidus_auth_devise or a custom auth system can replace this partial %>
+<% if spree_current_user %>
+<li>
+ <%= link_to "Logout", destroy_spree_user_session_path %>
+ <li>
+   <%= link_to "My account", account_path %>
+ </li>
+</li>
+<% else %>
+<li>
+ <%= link_to "Login", new_spree_user_session_path %>
+
+</li>
+<li>
+ <%= link_to "Register", new_spree_user_registration_path %>
+</li>
+<% end %>

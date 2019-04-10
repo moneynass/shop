@@ -1,4 +1,20 @@
 GIT
+  remote: https://github.com/solidusio-contrib/solidus_customer_images.git
+  revision: dcb59b3a713816720db187cb2fff78e0b0f4ffc8
+  specs:
+    solidus_customer_images (0.0.1)
+      deface (~> 1.3)
+      solidus_core (~> 2.6)
+
+GIT
+  remote: https://github.com/solidusio-contrib/solidus_product_assembly.git
+  revision: dd84e16bfa267548a97d4ef4c735f67b7c2465f9
+  branch: master
+  specs:
+    solidus_product_assembly (1.0.0)
+      solidus_backend (>= 1.0, < 3)
+
+GIT
   remote: https://github.com/solidusio-contrib/solidus_static_content.git
   revision: 0b2663c2ff73d4cd9a0a3fb27b837e6a1fc5a4d9
   specs:
@@ -486,9 +502,11 @@ DEPENDENCIES
   solidus
   solidus_auth_devise
   solidus_cloudinary
+  solidus_customer_images!
   solidus_frontend
   solidus_geocoding
   solidus_i18n
+  solidus_product_assembly!
   solidus_static_content!
   solidus_stripe!
   spring
