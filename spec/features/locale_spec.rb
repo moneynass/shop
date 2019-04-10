@@ -10,7 +10,7 @@ describe 'setting locale', type: :feature do
     yield
   ensure
     I18n.locale = I18n.default_locale
-    Spree::Frontend::Config[:locale] = 'en'
+    Spree::Frontend::Config[:locale] = 'fr'
   end
 
   context 'shopping cart link and page' do

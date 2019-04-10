@@ -7,4 +7,5 @@
  *= require_self
  *= require_tree .
  *= require spree/backend/solidus_geocoding
+ *= require spree/backend/solidus_customer_images
 */

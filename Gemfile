@@ -8,12 +8,16 @@ ruby '2.5.1'
 gem 'bootstrap-sass'
 gem 'solidus'
 gem 'solidus_auth_devise'
+gem 'aws-sdk'
+gem 'paperclip'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'solidus_cloudinary'
 gem 'solidus_static_content', github: 'solidusio-contrib/solidus_static_content'
 gem 'solidus_geocoding'
 gem 'geocoder'
+gem 'solidus_customer_images', github: 'solidusio-contrib/solidus_customer_images'
+gem 'solidus_product_assembly', github: 'solidusio-contrib/solidus_product_assembly', branch: 'master'
 
 #Payment for Solidus
 gem "solidus_stripe", github: "solidusio-contrib/solidus_stripe"

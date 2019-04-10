@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_161334) do
+ActiveRecord::Schema.define(version: 2019_04_08_154650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,12 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.index ["source_id", "source_type"], name: "index_spree_adjustments_on_source_id_and_source_type"
   end
 
+  create_table "spree_assemblies_parts", id: :serial, force: :cascade do |t|
+    t.integer "assembly_id", null: false
+    t.integer "part_id", null: false
+    t.integer "count", default: 1, null: false
+  end
+
   create_table "spree_assets", id: :serial, force: :cascade do |t|
     t.string "viewable_type"
     t.integer "viewable_id"
@@ -179,6 +185,19 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.integer "address_id"
     t.index ["payment_method_id"], name: "index_spree_credit_cards_on_payment_method_id"
     t.index ["user_id"], name: "index_spree_credit_cards_on_user_id"
+  end
+
+  create_table "spree_customer_images", force: :cascade do |t|
+    t.boolean "approved"
+    t.bigint "spree_product_id"
+    t.bigint "spree_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "user_name"
+    t.string "email"
+    t.text "description"
+    t.index ["spree_product_id"], name: "index_spree_customer_images_on_spree_product_id"
+    t.index ["spree_user_id"], name: "index_spree_customer_images_on_spree_user_id"
   end
 
   create_table "spree_customer_returns", id: :serial, force: :cascade do |t|
@@ -477,6 +496,8 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.datetime "updated_at", precision: 6
     t.boolean "promotionable", default: true
     t.string "meta_title"
+    t.boolean "can_be_part", default: false, null: false
+    t.boolean "individual_sale", default: true, null: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["name"], name: "index_spree_products_on_name"
@@ -595,7 +616,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.string "type"
     t.integer "usage_limit"
     t.string "match_policy", default: "all"
-    t.string "code"
     t.boolean "advertise", default: false
     t.string "path"
     t.datetime "created_at", precision: 6
@@ -605,7 +625,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.boolean "apply_automatically", default: false
     t.index ["advertise"], name: "index_spree_promotions_on_advertise"
     t.index ["apply_automatically"], name: "index_spree_promotions_on_apply_automatically"
-    t.index ["code"], name: "index_spree_promotions_on_code"
     t.index ["expires_at"], name: "index_spree_promotions_on_expires_at"
     t.index ["id", "type"], name: "index_spree_promotions_on_id_and_type"
     t.index ["promotion_category_id"], name: "index_spree_promotions_on_promotion_category_id"
@@ -933,10 +952,17 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.integer "originator_id"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
-    t.integer "update_reason_id"
+    t.integer "store_credit_reason_id"
     t.decimal "amount_remaining", precision: 8, scale: 2
     t.index ["deleted_at"], name: "index_spree_store_credit_events_on_deleted_at"
     t.index ["store_credit_id"], name: "index_spree_store_credit_events_on_store_credit_id"
+  end
+
+  create_table "spree_store_credit_reasons", force: :cascade do |t|
+    t.string "name"
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spree_store_credit_types", id: :serial, force: :cascade do |t|
@@ -945,12 +971,6 @@ ActiveRecord::Schema.define(version: 2019_02_04_161334) do
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
     t.index ["priority"], name: "index_spree_store_credit_types_on_priority"
-  end
-
-  create_table "spree_store_credit_update_reasons", id: :serial, force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6
-    t.datetime "updated_at", precision: 6
   end
 
   create_table "spree_store_credits", id: :serial, force: :cascade do |t|
