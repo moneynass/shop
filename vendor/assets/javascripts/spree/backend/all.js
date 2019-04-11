@@ -11,3 +11,4 @@
 //= require spree/backend/solidus_geocoding
 //= require spree/backend/solidus_customer_images
 //= require spree/backend/solidus_product_assembly
+//= require spree/backend/solidus_flexi_variants
