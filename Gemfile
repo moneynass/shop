@@ -18,7 +18,7 @@ gem 'solidus_geocoding'
 gem 'geocoder'
 gem 'solidus_customer_images', github: 'solidusio-contrib/solidus_customer_images'
 gem 'solidus_product_assembly', github: 'solidusio-contrib/solidus_product_assembly', branch: 'master'
-
+gem 'solidus_flexi_variants', github: 'boomerdigital/solidus_flexi_variants', branch: 'master'
 #Payment for Solidus
 gem "solidus_stripe", github: "solidusio-contrib/solidus_stripe"
 

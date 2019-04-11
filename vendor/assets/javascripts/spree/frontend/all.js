@@ -10,3 +10,4 @@
 //= require_tree .
 //= require spree/frontend/solidus_geocoding
 //= require spree/frontend/solidus_customer_images
+//= require spree/frontend/solidus_flexi_variants

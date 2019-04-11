@@ -1,4 +1,16 @@
 GIT
+  remote: https://github.com/boomerdigital/solidus_flexi_variants.git
+  revision: 129483edd968fe8e40742520a72c07e05cbebc7a
+  branch: master
+  specs:
+    solidus_flexi_variants (1.0.1)
+      carrierwave
+      deface (~> 1.0)
+      mini_magick
+      solidus_core (>= 1.0.0, < 3)
+      solidus_support
+
+GIT
   remote: https://github.com/solidusio-contrib/solidus_customer_images.git
   revision: dcb59b3a713816720db187cb2fff78e0b0f4ffc8
   specs:
@@ -232,6 +244,7 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2018.0812)
     mimemagic (0.3.3)
+    mini_magick (4.9.3)
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -503,6 +516,7 @@ DEPENDENCIES
   solidus_auth_devise
   solidus_cloudinary
   solidus_customer_images!
+  solidus_flexi_variants!
   solidus_frontend
   solidus_geocoding
   solidus_i18n
