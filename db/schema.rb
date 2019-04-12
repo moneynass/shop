@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_073168) do
+ActiveRecord::Schema.define(version: 2019_04_11_150523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -339,6 +339,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_073168) do
     t.integer "option_type_id"
     t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6
+    t.decimal "surcharge", precision: 8, scale: 2, default: "0.0"
     t.index ["option_type_id"], name: "index_spree_option_values_on_option_type_id"
     t.index ["position"], name: "index_spree_option_values_on_position"
   end
@@ -528,6 +529,24 @@ ActiveRecord::Schema.define(version: 2019_04_10_073168) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "spree_product_imports", id: :serial, force: :cascade do |t|
+    t.string "data_file_file_name"
+    t.string "data_file_content_type"
+    t.integer "data_file_file_size"
+    t.datetime "data_file_updated_at"
+    t.string "state"
+    t.text "product_ids"
+    t.datetime "completed_at"
+    t.datetime "failed_at"
+    t.text "error_message"
+    t.integer "created_by"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string "separatorChar"
+    t.string "encoding_csv"
+    t.string "quoteChar"
+  end
+
   create_table "spree_product_option_types", id: :serial, force: :cascade do |t|
     t.integer "position"
     t.integer "product_id"
@@ -576,6 +595,7 @@ ActiveRecord::Schema.define(version: 2019_04_10_073168) do
     t.string "meta_title"
     t.boolean "can_be_part", default: false, null: false
     t.boolean "individual_sale", default: true, null: false
+    t.boolean "dynamic_variants", default: false
     t.index ["available_on"], name: "index_spree_products_on_available_on"
     t.index ["deleted_at"], name: "index_spree_products_on_deleted_at"
     t.index ["name"], name: "index_spree_products_on_name"

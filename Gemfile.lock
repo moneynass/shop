@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/2BeDigital/solidus_import_products.git
+  revision: 757b6e980d694d721c48fa1339fab3cfdde7ec17
+  specs:
+    solidus_import_products (2.0.0)
+      deface
+      solidus_auth_devise
+      solidus_core (>= 2.0)
+      solidus_support
+
+GIT
   remote: https://github.com/boomerdigital/solidus_flexi_variants.git
   revision: 129483edd968fe8e40742520a72c07e05cbebc7a
   branch: master
@@ -520,6 +530,7 @@ DEPENDENCIES
   solidus_frontend
   solidus_geocoding
   solidus_i18n
+  solidus_import_products!
   solidus_product_assembly!
   solidus_static_content!
   solidus_stripe!
